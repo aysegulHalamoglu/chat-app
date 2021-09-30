@@ -1,38 +1,49 @@
-.App {
+:root {
+  /* Colors */
+  --primary: #68b7ff;
+  --secondary: #f2f2f2;
+  --input: #f3f3f3;
+  --inputcolor: #bbbbbb;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Login Page */
+
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginHeader {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loginRows {
+  width: 20rem;
+  padding: 0.7rem;
+  border-color: transparent;
+  border-radius: 0.2rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.CustomInput {
+  margin-bottom: 0.5rem;
+  font-family: Poppins;
+  font-size: 1rem;
+  color: var(--inputcolor);
+  background-color: var(--input);
+  border-color: transparent;
+  border-radius: 0.2rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CustomButton {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--primary);
 }
