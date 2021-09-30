@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { LoginContext } from "./context/LoginContext";
-import Chat from "./pages/Chat";
+import Chat from "./pages/Chat/";
 import Login from "./pages/Login";
 function Routes() {
   const { user } = useContext(LoginContext);

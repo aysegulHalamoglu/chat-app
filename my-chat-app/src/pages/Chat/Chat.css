@@ -1,0 +1,43 @@
+.chatContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side,
+.right-side {
+  display: flex;
+  flex-direction: column;
+}
+.left-side div,
+.right-side div {
+  border: 1px solid grey;
+}
+
+.left-side {
+  flex: 1;
+}
+.right-side {
+  flex: 4;
+}
+
+.friendList,
+.messages {
+  flex: 1;
+}
+
+.userHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.userImage {
+  flex: 1;
+}
+.userName {
+  flex: 4;
+}
+.more {
+  flex: 1;
+}
