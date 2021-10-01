@@ -6,7 +6,9 @@ export default function FriendList() {
   return (
     <div className="friendList">
       {friendList.map((item) => {
-        return <div>{`${item.first_name} ${item.last_name}`} </div>;
+        return (
+          <div key={item.id}>{`${item.first_name} ${item.last_name}`} </div>
+        );
       })}
     </div>
   );
