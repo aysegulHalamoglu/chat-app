@@ -5,8 +5,8 @@ import Routes from "./routes";
 
 function App() {
   const [user, setUser] = useState(null);
-  const login = (username) => {
-    setUser({ username });
+  const login = (username, firstName, lastName) => {
+    setUser({ username, firstName, lastName });
   };
   return (
     <div className="App">

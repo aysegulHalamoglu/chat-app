@@ -6,6 +6,8 @@ import { LoginContext } from "../context/LoginContext";
 export default function Login() {
   const { login } = useContext(LoginContext);
   const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   return (
     <div className="loginContainer">
       <form>
@@ -24,7 +26,7 @@ export default function Login() {
           <CustomInput
             placeholder="First Name"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setFirstName(e.target.value);
             }}
           />
         </div>
@@ -32,7 +34,7 @@ export default function Login() {
           <CustomInput
             placeholder="Last Name"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setLastName(e.target.value);
             }}
           />
         </div>
@@ -40,7 +42,7 @@ export default function Login() {
           <CustomButton
             value="LOGIN"
             onClick={() => {
-              login(username);
+              login(username, firstName, lastName);
             }}
           />
         </div>
