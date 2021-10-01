@@ -1,21 +1,22 @@
 import React from "react";
 import "./Chat.css";
+import UserHeader from "./components/UserHeader";
+import SearchInput from "./components/SearchInput";
+import FriendList from "./components/FriendList";
+import Settings from "./components/Settings";
+import MessageInput from "./components/MessageInput";
 export default function Chat() {
   return (
     <div className="chatContainer">
       <div className="left-side">
-        <div className="searchbar">searchbar</div>
-        <div className="friendList">friendList</div>
-        <div className="settings">settings</div>
+        <SearchInput />
+        <FriendList />
+        <Settings />
       </div>
       <div className="right-side">
-        <div className="userHeader">
-          <div className="userImage">Image</div>
-          <div className="userName">userName</div>
-          <div className="more">...</div>
-        </div>
-        <div className="messages">messages</div>
-        <div className="messageInput">messageInput</div>
+        <UserHeader />
+        <div className="messages">Messages</div>
+        <MessageInput />
       </div>
     </div>
   );
