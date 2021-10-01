@@ -5,6 +5,7 @@ import SearchInput from "./components/SearchInput";
 import FriendList from "./components/FriendList";
 import Settings from "./components/Settings";
 import MessageInput from "./components/MessageInput";
+import Messages from "./components/Messages";
 export default function Chat() {
   return (
     <div className="chatContainer">
@@ -15,7 +16,7 @@ export default function Chat() {
       </div>
       <div className="right-side">
         <UserHeader />
-        <div className="messages">Messages</div>
+        <Messages />
         <MessageInput />
       </div>
     </div>
