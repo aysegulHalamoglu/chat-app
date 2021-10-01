@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LoginContext } from "../../../context/LoginContext";
 
 export default function Messages() {
-  return <div className="messages">Messages</div>;
+  const { selectedUser } = useContext(LoginContext);
+  return (
+    <div className="messages">
+      {selectedUser?.messages.map((message, index) => {
+        return <div key={index}> {message.text} </div>;
+      })}
+    </div>
+  );
 }
