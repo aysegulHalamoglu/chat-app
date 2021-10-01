@@ -1,10 +1,19 @@
 import { useState } from "react";
-import "./App.css";
 import { LoginContext } from "./context/LoginContext";
+import "./App.css";
 import Routes from "./routes";
+
 import mockFriends from "./mock-friends.json";
+
 function App() {
   const [user, setUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  const selectUser = (userID) => {
+    const friend = mockFriends.friends.find((friend) => friend.id === userID);
+    setSelectedUser(friend);
+  };
+
   const login = (username, firstName, lastName) => {
     setUser({ username, firstName, lastName });
   };
@@ -15,6 +24,8 @@ function App() {
           user,
           login,
           friendList: mockFriends.friends,
+          selectUser,
+          selectedUser,
         }}
       >
         <Routes />
