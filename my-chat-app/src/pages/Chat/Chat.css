@@ -26,14 +26,23 @@
 .left-side {
   flex: 1.5;
 }
+
 /* Friend List- *****************************/
 
+.friendList {
+  background-color: var(--secondary);
+}
 .users {
   display: flex;
   flex-direction: row;
-  padding: 0.7rem;
+  padding: 0.5rem;
   justify-items: center;
   align-items: center;
+  background-color: white;
+}
+.users:hover {
+  background-color: var(--inputcolor);
+  cursor: pointer;
 }
 .userName {
   border: 0 !important;
@@ -59,13 +68,12 @@
 
 /* User Image */
 .userImage {
-  flex: 1;
-}
-.userImage {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
+
 .userPic {
   width: 3rem;
   height: 3rem;
@@ -74,12 +82,22 @@
   flex: 4;
 }
 
-/* More Button */
 .more {
+  display: flex;
   flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #8f8c8c;
+  font-weight: 900;
+}
+.more:hover {
+  color: #141414;
+  cursor: pointer;
 }
 
 /* -Messages- *****************************/
+
 .message {
   display: flex;
   background-color: var(--secondary);
