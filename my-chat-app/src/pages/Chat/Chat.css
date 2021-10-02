@@ -1,3 +1,11 @@
+:root {
+  /* Colors */
+  --primary: #68b7ff;
+  --secondary: #f2f2f2;
+  --input: #f3f3f3;
+  --inputcolor: #bbbbbb;
+}
+
 .chatContainer {
   width: 100%;
   min-height: 100vh;
@@ -12,32 +20,72 @@
 }
 .left-side div,
 .right-side div {
-  border: 1px solid grey;
+  border: 1px solid var(--secondary);
 }
 
 .left-side {
-  flex: 1;
+  flex: 1.5;
+}
+/* Friend List- *****************************/
+
+.users {
+  display: flex;
+  flex-direction: row;
+  padding: 0.7rem;
+  justify-items: center;
+  align-items: center;
+}
+.userName {
+  border: 0 !important;
+}
+.users h4 {
+  margin-left: 0.7rem;
 }
 .right-side {
   flex: 4;
 }
-
 .friendList,
 .messages {
   flex: 1;
 }
 
+/* -User Header- *****************************/
+
 .userHeader {
   display: flex;
   flex-direction: row;
+  background-color: var(--secondary);
 }
 
+/* User Image */
 .userImage {
   flex: 1;
+}
+.userImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userPic {
+  width: 3rem;
+  height: 3rem;
 }
 .userName {
   flex: 4;
 }
+
+/* More Button */
 .more {
   flex: 1;
+}
+
+/* -Messages- *****************************/
+.message {
+  display: flex;
+  background-color: var(--secondary);
+  padding: 0.6rem;
+  margin: 1.5rem;
+  font-family: Poppins;
+  letter-spacing: 0.0001rem;
+  text-align: justify;
 }

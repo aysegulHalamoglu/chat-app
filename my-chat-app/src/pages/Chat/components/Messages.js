@@ -6,7 +6,11 @@ export default function Messages() {
   return (
     <div className="messages">
       {selectedUser?.messages.map((message, index) => {
-        return <div key={index}> {message.text} </div>;
+        return (
+          <div className="message" key={index}>
+            {message.text}
+          </div>
+        );
       })}
     </div>
   );
