@@ -19,6 +19,10 @@ function App() {
     setUser({ user });
     localStorage.setItem("chat_app_user", JSON.stringify(user));
   };
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("chat_app_user");
+  };
 
   useEffect(() => {
     const usernameFromStorage = localStorage.getItem("chat_app_user");
@@ -33,6 +37,7 @@ function App() {
         value={{
           user,
           login,
+          logout,
           friendList: mockFriends.friends,
           selectUser,
           selectedUser,

@@ -16,6 +16,7 @@ export default function Login() {
         </div>
         <div>
           <CustomInput
+            className="loginRows CustomInput"
             placeholder="User Name"
             onChange={(e) => {
               setUsername(e.target.value);
@@ -24,6 +25,7 @@ export default function Login() {
         </div>
         <div>
           <CustomInput
+            className="loginRows CustomInput"
             placeholder="First Name"
             onChange={(e) => {
               setFirstName(e.target.value);
@@ -32,6 +34,7 @@ export default function Login() {
         </div>
         <div>
           <CustomInput
+            className="loginRows CustomInput"
             placeholder="Last Name"
             onChange={(e) => {
               setLastName(e.target.value);
@@ -40,7 +43,7 @@ export default function Login() {
         </div>
         <div>
           <CustomButton
-            value="LOGIN"
+            text="LOGIN"
             onClick={() => {
               login(username, firstName, lastName);
             }}

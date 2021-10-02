@@ -1,10 +1,9 @@
 import React from "react";
 
-const CustomButton = (props) => {
-  const { value, onClick } = props;
+const CustomButton = ({ text, onClick }) => {
   return (
-    <button className="loginRows CustomButton" value={value} onClick={onClick}>
-      {props.value}
+    <button className="loginRows CustomButton" onClick={onClick}>
+      {text}
     </button>
   );
 };
