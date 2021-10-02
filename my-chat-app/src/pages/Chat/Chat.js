@@ -1,11 +1,11 @@
 import React from "react";
 import "./Chat.css";
-import UserHeader from "./components/UserHeader";
-import SearchInput from "./components/SearchInput";
-import FriendList from "./components/FriendList";
-import Settings from "./components/Settings";
-import MessageInput from "./components/MessageInput";
-import Messages from "./components/Messages";
+import SearchInput from "./components/LeftSide/SearchInput";
+import FriendList from "./components/LeftSide/FriendList";
+import Settings from "./components/LeftSide/Settings";
+import MessageInput from "./components/RightSide/MessageInput";
+import Messages from "./components/RightSide/Messages";
+import UserHeader from "./components/RightSide/UserHeader";
 export default function Chat() {
   return (
     <div className="chatContainer">

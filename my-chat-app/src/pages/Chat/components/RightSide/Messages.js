@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../../../context/LoginContext";
+import { LoginContext } from "../../../../context/LoginContext";
 
 export default function Messages() {
   const { selectedUser } = useContext(LoginContext);

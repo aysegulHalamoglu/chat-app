@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../../../context/LoginContext";
-import profilePic from "../../../assets/img/profilPic.png";
+import { LoginContext } from "../../../../context/LoginContext";
+import profilePic from "./../../../../assets/img/profilPic.png";
 export default function FriendList() {
   const { friendList, selectUser } = useContext(LoginContext);
   return (

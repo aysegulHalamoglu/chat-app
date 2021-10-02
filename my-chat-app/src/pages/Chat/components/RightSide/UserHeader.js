@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../../../context/LoginContext";
-import profilePic from "../../../assets/img/profilPic.png";
-import "../Chat.css";
+import { LoginContext } from "../../../../context/LoginContext";
+import profilePic from "./../../../../assets/img/profilPic.png";
+import "../../Chat.css";
 export default function UserHeader() {
   const { selectedUser } = useContext(LoginContext);
   return (
