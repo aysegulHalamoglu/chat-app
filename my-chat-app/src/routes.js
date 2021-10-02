@@ -1,10 +1,5 @@
 import React, { useContext } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { LoginContext } from "./context/LoginContext";
 import Chat from "./pages/Chat/";
 import Login from "./pages/Login";
@@ -12,7 +7,7 @@ function Routes() {
   const { user } = useContext(LoginContext);
   return (
     <div className="Routes">
-      <Router>
+      <HashRouter>
         <Switch>
           {user ? (
             <>
@@ -27,7 +22,7 @@ function Routes() {
             </Route>
           )}
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
