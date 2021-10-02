@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LoginContext } from "./context/LoginContext";
 import "./App.css";
 import Routes from "./routes";
@@ -15,8 +15,18 @@ function App() {
   };
 
   const login = (username, firstName, lastName) => {
-    setUser({ username, firstName, lastName });
+    const user = { username, firstName, lastName };
+    setUser({ user });
+    localStorage.setItem("chat_app_user", JSON.stringify(user));
   };
+
+  useEffect(() => {
+    const usernameFromStorage = localStorage.getItem("chat_app_user");
+    if (usernameFromStorage) {
+      const userObj = JSON.parse(usernameFromStorage);
+      setUser(userObj);
+    }
+  }, []);
   return (
     <div className="App">
       <LoginContext.Provider
