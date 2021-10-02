@@ -6,6 +6,9 @@
   --inputcolor: #bbbbbb;
 }
 
+* {
+  box-sizing: border-box;
+}
 .chatContainer {
   width: 100%;
   min-height: 100vh;
@@ -27,6 +30,26 @@
   flex: 1.5;
 }
 
+/* -Search Input- *****************************/
+
+.searchbarContainer {
+  background-color: var(--secondary);
+  padding: 1rem;
+  padding-bottom: 0.7rem;
+}
+
+.searchbar {
+  flex: 1;
+  display: flex;
+  padding: 0.4rem;
+  border: 1px solid var(--inputcolor);
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+.searchbar:focus {
+  outline: none;
+}
+
 /* Friend List- *****************************/
 
 .friendList {
@@ -35,17 +58,19 @@
 .users {
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
+  padding: 0.1rem;
   justify-items: center;
   align-items: center;
   background-color: white;
+  transition: 1s;
 }
 .users:hover {
-  background-color: var(--inputcolor);
+  background-color: var(--primary);
   cursor: pointer;
 }
 .userName {
   border: 0 !important;
+  font-size: 1rem;
 }
 .users h4 {
   margin-left: 0.7rem;
@@ -106,4 +131,22 @@
   font-family: Poppins;
   letter-spacing: 0.0001rem;
   text-align: justify;
+}
+
+/* -Settings- *****************************/
+
+.settings {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  background-color: var(--secondary);
+}
+.buttonSm {
+  border: none;
+  transition: 0.5s;
+}
+.buttonSm:hover,
+.buttonSm:focus {
+  box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
+  transform: translateY(-1em);
 }
