@@ -1,15 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CustomInput from "../../../../components/CustomInput";
 
-export default function SearchInput({ handleOnChange, searchText }) {
-  useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      console.log(searchText);
-      handleOnChange(searchText);
-    }, 5000);
-
-    return () => clearTimeout(delayDebounceFn);
-  }, [handleOnChange]);
+export default function SearchInput({ handleOnChange }) {
   return (
     <div className="searchbarContainer">
       <CustomInput
