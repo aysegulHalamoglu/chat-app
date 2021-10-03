@@ -5,11 +5,13 @@ import { v4 as uuidv4 } from "uuid";
 import Routes from "./routes";
 
 import mockFriends from "./mock-friends.json";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
   const [user, setUser] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
   const [clickedMore, setClickedMore] = useState(false);
+  const [theming, setTheming] = useState("light");
 
   const selectUser = (userID) => {
     const friend = mockFriends.friends.find((friend) => friend.id === userID);
@@ -46,6 +48,23 @@ function App() {
   const handleCancel = () => {
     setClickedMore(false);
   };
+
+  const toggleTheme = () => {
+    if (theming === "light") {
+      setTheming("dark");
+    } else {
+      setTheming("light");
+    }
+  };
+
+  function changeColor(theming) {
+    if (theming === "light") {
+      return "themeLight";
+    } else {
+      return "themeDark";
+    }
+  }
+
   useEffect(() => {
     handleCancel();
   }, [selectedUser]);
@@ -59,22 +78,30 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <LoginContext.Provider
+      <ThemeContext.Provider
         value={{
-          user,
-          login,
-          logout,
-          friendList: mockFriends.friends,
-          selectUser,
-          selectedUser,
-          sendNewMessage,
-          onClickedMore,
-          clickedMore,
-          handleCancel,
+          theming,
+          toggleTheme,
+          changeColor,
         }}
       >
-        <Routes />
-      </LoginContext.Provider>
+        <LoginContext.Provider
+          value={{
+            user,
+            login,
+            logout,
+            friendList: mockFriends.friends,
+            selectUser,
+            selectedUser,
+            sendNewMessage,
+            onClickedMore,
+            clickedMore,
+            handleCancel,
+          }}
+        >
+          <Routes />
+        </LoginContext.Provider>
+      </ThemeContext.Provider>
     </div>
   );
 }

@@ -1,9 +1,10 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 const CustomButton = (props) => {
-  const { text, onClick, className } = props;
+  const { theming } = useContext(ThemeContext);
+  const { text, onClick, className, style } = props;
   return (
-    <button className={className} onClick={onClick}>
+    <button style={style} className={className} onClick={onClick}>
       {text}
     </button>
   );

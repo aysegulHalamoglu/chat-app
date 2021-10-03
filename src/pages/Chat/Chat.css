@@ -94,6 +94,7 @@
   margin-top: 1rem; /* preventing conflict between scrollbar and icons hovering */
 }
 .buttonSm {
+  border-radius: 1.5rem;
   border: none;
   transition: 0.5s;
 }
@@ -163,6 +164,7 @@
 .messageInputContainer {
   display: flex;
   background-color: var(--secondary);
+  padding: 1rem;
 }
 .messageInput {
   flex: 4;
