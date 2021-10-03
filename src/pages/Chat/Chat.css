@@ -26,6 +26,7 @@
   flex: 1;
 }
 
+/*********************** -Left Side- *****************************/
 /* -Search Input- *****************************/
 
 .searchbarContainer {
@@ -102,6 +103,8 @@
   transform: translateY(-1em);
 }
 
+/*********************** -Right Side- *****************************/
+
 /* -User Header- *****************************/
 
 .userHeader {
@@ -127,7 +130,7 @@
   margin-left: 1rem;
 }
 
-.more {
+.moreButton {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -135,8 +138,10 @@
   font-size: 2rem;
   color: #8f8c8c;
   font-weight: 900;
+  border: none;
+  margin-right: 2rem;
 }
-.more:hover {
+.moreButton:hover {
   color: #141414;
   cursor: pointer;
 }

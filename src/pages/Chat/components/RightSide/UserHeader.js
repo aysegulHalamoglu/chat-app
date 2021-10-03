@@ -19,7 +19,11 @@ export default function UserHeader() {
         </h3>
       </div>
       <div className="more">
-        <CustomButton text="..." onClick={onClickedMore} />
+        <CustomButton
+          className="moreButton"
+          text="..."
+          onClick={onClickedMore}
+        />
       </div>
     </div>
   );

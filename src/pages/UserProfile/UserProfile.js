@@ -9,7 +9,8 @@ import call from "../..//assets/img/call.svg";
 import video from "../..//assets/img/video.svg";
 
 export default function UserProfile() {
-  const { handleCancel } = useContext(LoginContext);
+  const { handleCancel, selectedUser } = useContext(LoginContext);
+
   return (
     <div className="userProfileContainer">
       <div className="cancelButton" onClick={handleCancel}>
@@ -19,8 +20,10 @@ export default function UserProfile() {
         <div className="profilePicContainer">
           <img className="profilePic" src={profilePic} alt="profile" />
         </div>
-        <span className="profileName">JohnDoe</span>
-        <span className="lastSeen">last seen</span>
+        <span className="profileName">
+          {selectedUser.first_name} {selectedUser.last_name}
+        </span>
+        <span className="lastSeen">Last seen 2 hours ago</span>
       </div>
 
       <div className="actions">
