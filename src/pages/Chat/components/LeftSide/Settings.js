@@ -8,10 +8,10 @@ export default function Settings() {
   return (
     <div className="settings">
       <button className="buttonSm">
-        <img src={iconDarkmode} />
+        <img src={iconDarkmode} alt="darkModeIcon" />
       </button>
       <button className="buttonSm" onClick={logout}>
-        <img src={iconLogout} />
+        <img src={iconLogout} alt="logoutIcon" />
       </button>
     </div>
   );
