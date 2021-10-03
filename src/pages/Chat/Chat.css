@@ -159,7 +159,7 @@
   background-color: var(--secondary);
 }
 .messageInput {
-  flex: 1;
+  flex: 4;
   padding-left: 1rem;
   padding: 1rem;
   border: 1px solid var(--inputcolor);
@@ -168,4 +168,10 @@
 }
 .messageInput:focus {
   outline: none;
+}
+
+.messageButton {
+  text-transform: uppercase;
+  flex: 0.5;
+  border: none;
 }

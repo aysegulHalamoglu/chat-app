@@ -43,6 +43,7 @@ export default function Login() {
         </div>
         <div>
           <CustomButton
+            className="loginRows CustomButton"
             text="LOGIN"
             onClick={() => {
               login(username, firstName, lastName);

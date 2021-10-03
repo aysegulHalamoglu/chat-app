@@ -18,7 +18,7 @@ export default function MessageInput() {
         }}
       />
       <CustomButton
-        className="messageButton"
+        className="messageButton CustomButton"
         text="SEND"
         onClick={() => {
           sendNewMessage(message);

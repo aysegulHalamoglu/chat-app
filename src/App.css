@@ -41,10 +41,14 @@ body {
   background-color: var(--input);
   border-color: transparent;
   border-radius: 0.2rem;
-  text-transform: uppercase;
 }
 .CustomButton {
   font-size: 1rem;
   color: #ffffff;
   background-color: var(--primary);
+}
+
+.CustomButton:hover {
+  filter: brightness(90%);
+  cursor: pointer;
 }

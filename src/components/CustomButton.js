@@ -1,8 +1,9 @@
 import React from "react";
 
-const CustomButton = ({ text, onClick }) => {
+const CustomButton = (props) => {
+  const { text, onClick, className } = props;
   return (
-    <button className="loginRows CustomButton" onClick={onClick}>
+    <button className={className} onClick={onClick}>
       {text}
     </button>
   );
