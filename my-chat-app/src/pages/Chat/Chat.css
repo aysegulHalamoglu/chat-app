@@ -27,7 +27,7 @@
 }
 
 .left-side {
-  flex: 1.5;
+  flex: 1;
 }
 
 /* -Search Input- *****************************/
@@ -83,6 +83,24 @@
   flex: 1;
 }
 
+/* -Settings- *****************************/
+
+.settings {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  background-color: var(--secondary);
+}
+.buttonSm {
+  border: none;
+  transition: 0.5s;
+}
+.buttonSm:hover,
+.buttonSm:focus {
+  box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
+  transform: translateY(-1em);
+}
+
 /* -User Header- *****************************/
 
 .userHeader {
@@ -133,20 +151,20 @@
   text-align: justify;
 }
 
-/* -Settings- *****************************/
+/* -Message Input- *****************************/
 
-.settings {
+.messageInputContainer {
   display: flex;
-  justify-content: end;
-  flex-direction: row;
   background-color: var(--secondary);
 }
-.buttonSm {
-  border: none;
-  transition: 0.5s;
+.messageInput {
+  flex: 1;
+  padding-left: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--inputcolor);
+  font-family: "Poppins";
+  font-size: 1rem;
 }
-.buttonSm:hover,
-.buttonSm:focus {
-  box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
-  transform: translateY(-1em);
+.messageInput:focus {
+  outline: none;
 }

@@ -1,5 +1,30 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import CustomButton from "../../../../components/CustomButton";
+import CustomInput from "../../../../components/CustomInput";
+import { LoginContext } from "../../../../context/LoginContext";
+import "../../Chat.css";
 
 export default function MessageInput() {
-  return <div className="messageInput">Message Input</div>;
+  const { sendNewMessage } = useContext(LoginContext);
+  const [message, setMessage] = useState("");
+  return (
+    <div className="messageInputContainer">
+      <CustomInput
+        value={message}
+        className="messageInput"
+        placeholder="Type..."
+        onChange={(e) => {
+          setMessage(e.target.value);
+        }}
+      />
+      <CustomButton
+        className="messageButton"
+        text="SEND"
+        onClick={() => {
+          sendNewMessage(message);
+          setMessage("");
+        }}
+      />
+    </div>
+  );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { LoginContext } from "./context/LoginContext";
 import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 import Routes from "./routes";
 
 import mockFriends from "./mock-friends.json";
@@ -14,6 +15,19 @@ function App() {
     setSelectedUser(friend);
   };
 
+  const sendNewMessage = (messageText) => {
+    setSelectedUser({
+      ...selectedUser,
+      messages: [
+        ...selectedUser.messages,
+        {
+          id: uuidv4(),
+          text: messageText,
+          sender: user.id,
+        },
+      ],
+    });
+  };
   const login = (username, firstName, lastName) => {
     const user = { username, firstName, lastName };
     setUser({ user });
@@ -41,6 +55,7 @@ function App() {
           friendList: mockFriends.friends,
           selectUser,
           selectedUser,
+          sendNewMessage,
         }}
       >
         <Routes />

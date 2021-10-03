@@ -5,4 +5,5 @@ export const LoginContext = React.createContext({
   friendList: [],
   login: () => {},
   logout: () => {},
+  sendNewMessage: () => {},
 });
