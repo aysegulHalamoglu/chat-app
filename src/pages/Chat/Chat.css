@@ -54,6 +54,7 @@
 
 .friendList {
   background-color: var(--secondary);
+  overflow: scroll;
 }
 .users {
   display: flex;
@@ -90,6 +91,9 @@
   justify-content: end;
   flex-direction: row;
   background-color: var(--secondary);
+}
+.settingsWrap {
+  margin-top: 1rem; /* preventing conflict between scrollbar and icons hovering */
 }
 .buttonSm {
   border: none;
@@ -173,5 +177,7 @@
 .messageButton {
   text-transform: uppercase;
   flex: 0.5;
-  border: none;
+  border-color: transparent;
+  border-radius: 0.2rem;
+  padding: 0.7rem;
 }
