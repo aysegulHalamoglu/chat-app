@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { LoginContext } from "../../context/LoginContext";
 import "./Chat.css";
 import SearchInput from "./components/LeftSide/SearchInput";
 import FriendList from "./components/LeftSide/FriendList";
@@ -6,7 +7,6 @@ import Settings from "./components/LeftSide/Settings";
 import MessageInput from "./components/RightSide/MessageInput";
 import Messages from "./components/RightSide/Messages";
 import UserHeader from "./components/RightSide/UserHeader";
-import { LoginContext } from "../../context/LoginContext";
 import UserProfile from "../UserProfile";
 import EmptyComponent from "./components/RightSide/EmptyComponent";
 export default function Chat() {
