@@ -148,7 +148,10 @@
 }
 
 /* -Messages- *****************************/
-
+.empty {
+  display: flex;
+  height: 100vh;
+}
 .message {
   display: flex;
   background-color: var(--secondary);

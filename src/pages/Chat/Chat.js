@@ -8,6 +8,7 @@ import Messages from "./components/RightSide/Messages";
 import UserHeader from "./components/RightSide/UserHeader";
 import { LoginContext } from "../../context/LoginContext";
 import UserProfile from "../UserProfile";
+import EmptyComponent from "./components/RightSide/EmptyComponent";
 export default function Chat() {
   const { clickedMore, selectedUser } = useContext(LoginContext);
   const [search, setSearch] = useState("");
@@ -30,7 +31,9 @@ export default function Chat() {
               <MessageInput />
             </>
           )
-        ) : null}
+        ) : (
+          <EmptyComponent />
+        )}
       </div>
     </div>
   );
