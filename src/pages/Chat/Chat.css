@@ -21,10 +21,6 @@
   display: flex;
   flex-direction: column;
 }
-.left-side div,
-.right-side div {
-  border: 1px solid var(--secondary);
-}
 
 .left-side {
   flex: 1;
@@ -64,6 +60,7 @@
   align-items: center;
   background-color: white;
   transition: 1s;
+  margin-bottom: 0.4rem;
 }
 .users:hover {
   background-color: var(--primary);

@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { LoginContext } from "../../../../context/LoginContext";
 import profilePic from "./../../../../assets/img/profilPic.png";
 import "../../Chat.css";
+import CustomButton from "../../../../components/CustomButton";
 export default function UserHeader() {
-  const { selectedUser } = useContext(LoginContext);
+  const { selectedUser, onClickedMore } = useContext(LoginContext);
+
   return (
     <div className="userHeader">
       <div className="userImage">
@@ -16,7 +18,9 @@ export default function UserHeader() {
             : "No selected user"}
         </h3>
       </div>
-      <div className="more">...</div>
+      <div className="more">
+        <CustomButton text="..." onClick={onClickedMore} />
+      </div>
     </div>
   );
 }

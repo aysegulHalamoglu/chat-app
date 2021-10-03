@@ -9,6 +9,7 @@ import mockFriends from "./mock-friends.json";
 function App() {
   const [user, setUser] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [clickedMore, setClickedMore] = useState(false);
 
   const selectUser = (userID) => {
     const friend = mockFriends.friends.find((friend) => friend.id === userID);
@@ -38,6 +39,14 @@ function App() {
     localStorage.removeItem("chat_app_user");
   };
 
+  const onClickedMore = (clickedMore) => {
+    setClickedMore(true);
+  };
+
+  const handleCancel = () => {
+    setClickedMore(false);
+  };
+
   useEffect(() => {
     const usernameFromStorage = localStorage.getItem("chat_app_user");
     if (usernameFromStorage) {
@@ -56,6 +65,9 @@ function App() {
           selectUser,
           selectedUser,
           sendNewMessage,
+          onClickedMore,
+          clickedMore,
+          handleCancel,
         }}
       >
         <Routes />

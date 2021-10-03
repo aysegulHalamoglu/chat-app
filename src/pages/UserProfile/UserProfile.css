@@ -1,0 +1,65 @@
+.userProfileContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------ Cancel Button -----------*/
+.cancelButton {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: end;
+  padding: 1rem;
+  padding-right: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: gray;
+}
+/* ------ Profile Detailsn -----------*/
+
+.userDetails {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePicContainer {
+  margin-bottom: 1rem;
+}
+.profilePic {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+/* ------ Action Boxes -----------*/
+.actions {
+  display: flex;
+  flex: 4;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  border: none;
+}
+
+.actionButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 11rem;
+  height: 7rem;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem;
+  background-color: var(--secondary);
+}
+
+.messaging,
+.call,
+.video {
+  width: 3rem;
+  height: 3rem;
+  padding-bottom: 1rem;
+}

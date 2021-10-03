@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Chat.css";
 import SearchInput from "./components/LeftSide/SearchInput";
 import FriendList from "./components/LeftSide/FriendList";
@@ -6,8 +6,12 @@ import Settings from "./components/LeftSide/Settings";
 import MessageInput from "./components/RightSide/MessageInput";
 import Messages from "./components/RightSide/Messages";
 import UserHeader from "./components/RightSide/UserHeader";
+import { LoginContext } from "../../context/LoginContext";
+import UserProfile from "../UserProfile";
 export default function Chat() {
+  const { clickedMore } = useContext(LoginContext);
   const [search, setSearch] = useState("");
+
   return (
     <div className="chatContainer">
       <div className="left-side">
@@ -16,9 +20,15 @@ export default function Chat() {
         <Settings />
       </div>
       <div className="right-side">
-        <UserHeader />
-        <Messages />
-        <MessageInput />
+        {clickedMore == true ? (
+          <UserProfile />
+        ) : (
+          <>
+            <UserHeader />
+            <Messages />
+            <MessageInput />
+          </>
+        )}
       </div>
     </div>
   );
