@@ -7,8 +7,10 @@ export default function Messages() {
     <div className="messages">
       {selectedUser?.messages.map((message, index) => {
         return (
-          <div className="message" key={index}>
-            {message.text}
+          <div className="messageContainer">
+            <div className="message" key={index}>
+              {message.text}
+            </div>
           </div>
         );
       })}
