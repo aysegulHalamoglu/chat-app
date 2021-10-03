@@ -20,7 +20,7 @@ This is a messaging app created by Ayşegül H. for Kodluyoruz Homework2
 - Routing " react-router-dom"
 - Hooks "useState,useContext,useEffect"
 
-<img src="assets/chatapp1.PNG" width="500"/> 
-<img src="assets/chatapp2.PNG" width="500"/> 
-<img src="assets/chatapp3.PNG" width="500"/> 
-<img src="assets/chatapp4.PNG" width="500"/>
+<img src="./assets/img/chatapp1.PNG" width="500"/> <br>
+<img src="./assets/img/chatapp2.PNG" width="500"/> <br>
+<img src="./assets/img/chatapp3.PNG" width="500"/> <br>
+<img src="./assets/img/chatapp4.PNG" width="500"/> <br>
