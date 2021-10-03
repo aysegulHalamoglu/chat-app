@@ -9,7 +9,7 @@ import UserHeader from "./components/RightSide/UserHeader";
 import { LoginContext } from "../../context/LoginContext";
 import UserProfile from "../UserProfile";
 export default function Chat() {
-  const { clickedMore } = useContext(LoginContext);
+  const { clickedMore, selectedUser } = useContext(LoginContext);
   const [search, setSearch] = useState("");
 
   return (
@@ -20,15 +20,17 @@ export default function Chat() {
         <Settings />
       </div>
       <div className="right-side">
-        {clickedMore == true ? (
-          <UserProfile />
-        ) : (
-          <>
-            <UserHeader />
-            <Messages />
-            <MessageInput />
-          </>
-        )}
+        {selectedUser ? (
+          clickedMore === true ? (
+            <UserProfile />
+          ) : (
+            <>
+              <UserHeader />
+              <Messages />
+              <MessageInput />
+            </>
+          )
+        ) : null}
       </div>
     </div>
   );

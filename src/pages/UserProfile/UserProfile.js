@@ -21,7 +21,7 @@ export default function UserProfile() {
           <img className="profilePic" src={profilePic} alt="profile" />
         </div>
         <span className="profileName">
-          {selectedUser.first_name} {selectedUser.last_name}
+          {`${selectedUser.first_name} ${selectedUser.last_name}`}
         </span>
         <span className="lastSeen">Last seen 2 hours ago</span>
       </div>

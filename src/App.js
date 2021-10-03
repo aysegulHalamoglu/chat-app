@@ -46,6 +46,9 @@ function App() {
   const handleCancel = () => {
     setClickedMore(false);
   };
+  useEffect(() => {
+    handleCancel();
+  }, [selectedUser]);
 
   useEffect(() => {
     const usernameFromStorage = localStorage.getItem("chat_app_user");
