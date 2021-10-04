@@ -30,7 +30,16 @@
 /* -Search Input- *****************************/
 
 .searchbarContainer {
+  display: flex;
+  justify-items: center;
   background-color: var(--secondary);
+  padding: 1rem;
+  padding-bottom: 0.7rem;
+}
+.searchbarContainerDark {
+  display: flex;
+  justify-items: center;
+  background-color: #6a6a6a;
   padding: 1rem;
   padding-bottom: 0.7rem;
 }
@@ -40,11 +49,26 @@
   display: flex;
   padding: 0.4rem;
   border: 1px solid var(--inputcolor);
+  color: #000000;
   font-family: "Poppins";
   font-size: 1rem;
 }
-.searchbar:focus {
+.searchbarDark {
+  flex: 1;
+  display: flex;
+  padding: 0.4rem;
+  border: 1px solid white;
+  color: #ffffff;
+  background-color: gray;
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+.searchbar:focus,
+.searchbarDark:focus {
   outline: none;
+}
+.searchbarDark::placeholder {
+  color: #ffffff;
 }
 
 /* Friend List- *****************************/

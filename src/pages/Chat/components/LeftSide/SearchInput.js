@@ -6,14 +6,12 @@ export default function SearchInput({ handleOnChange }) {
   const { theming } = useContext(ThemeContext);
   return (
     <div
-      style={{
-        background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-        color: theming === "light" ? "#000000" : "#FFFFFF",
-      }}
-      className="searchbarContainer"
+      className={
+        theming === "light" ? "searchbarContainer" : "searchbarContainerDark"
+      }
     >
       <CustomInput
-        className="searchbar"
+        className={theming === "light" ? "searchbar" : "searchbarDark"}
         placeholder="Search..."
         onChange={(e) => {
           handleOnChange(e.target.value);
