@@ -14,22 +14,12 @@ export default function FriendList({ searchText }) {
   );
 
   return (
-    <div
-      style={{
-        background: theming === "light" ? "#F3F3F3" : "#6A6A6A",
-        color: theming === "light" ? "#000000" : "#FFFFFF",
-      }}
-      className="friendList"
-    >
+    <div className={theming === "light" ? "friendList" : "friendListDark"}>
       {filteredFriendList.map((item) => {
         return (
           <div
-            style={{
-              background: theming === "light" ? "#FFFFFF" : "#7A7A7A",
-              color: theming === "light" ? "#000000" : "#FFFFFF",
-            }}
             key={item.id}
-            className="users"
+            className={theming === "light" ? "users" : "usersDark"}
             onClick={() => selectUser(item.id)}
           >
             <img className="userPic" src={profilePic} alt="profile" />

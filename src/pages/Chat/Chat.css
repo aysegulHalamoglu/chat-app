@@ -1,9 +1,12 @@
 :root {
   /* Colors */
   --primary: #68b7ff;
+  --primaryDark: #4d8dc8;
   --secondary: #f2f2f2;
   --input: #f3f3f3;
   --inputcolor: #bbbbbb;
+  --lightBG: #f3f3f3;
+  --darkBG: #6a6a6a;
 }
 
 * {
@@ -74,7 +77,13 @@
 /* Friend List- *****************************/
 
 .friendList {
-  background-color: var(--secondary);
+  background-color: var(--lightBG);
+  overflow: scroll;
+  flex: 1;
+}
+.friendListDark {
+  flex: 1;
+  background-color: var(--input);
   overflow: scroll;
 }
 .users {
@@ -84,11 +93,27 @@
   justify-items: center;
   align-items: center;
   background-color: white;
+  color: #000000;
+  transition: 1s;
+  margin-bottom: 0.4rem;
+}
+.usersDark {
+  display: flex;
+  flex-direction: row;
+  padding: 0.1rem;
+  justify-items: center;
+  align-items: center;
+  background-color: #7a7a7a;
+  color: #ffffff;
   transition: 1s;
   margin-bottom: 0.4rem;
 }
 .users:hover {
   background-color: var(--primary);
+  cursor: pointer;
+}
+.usersDark:hover {
+  background-color: var(--primaryDark);
   cursor: pointer;
 }
 .userName {
@@ -98,10 +123,13 @@
 .users h4 {
   margin-left: 0.7rem;
 }
+.usersDark h4 {
+  margin-left: 0.7rem;
+}
 .right-side {
   flex: 4;
 }
-.friendList,
+
 .messages {
   flex: 1;
 }
