@@ -142,16 +142,35 @@
   flex-direction: row;
   background-color: var(--secondary);
 }
+.settingsDark {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  background-color: var(--darkBG);
+}
 .settingsWrap {
   margin-top: 1rem; /* preventing conflict between scrollbar and icons hovering */
 }
-.buttonSm {
+.buttonSettings {
   border-radius: 1.5rem;
   border: none;
   transition: 0.5s;
+  background-color: var(--secondary);
 }
-.buttonSm:hover,
-.buttonSm:focus {
+.buttonSettingsDark {
+  border-radius: 1.5rem;
+  border: none;
+  transition: 0.5s;
+  background-color: var(--darkBG);
+}
+
+.buttonSettings:hover,
+.buttonSettings:focus {
+  box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
+  transform: translateY(-1em);
+}
+.buttonSettingsDark:hover,
+.buttonSettingsDark:focus {
   box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
   transform: translateY(-1em);
 }

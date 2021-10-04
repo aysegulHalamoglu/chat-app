@@ -8,27 +8,20 @@ export default function Settings() {
   const { logout } = useContext(LoginContext);
   const { toggleTheme, theming } = useContext(ThemeContext);
   return (
-    <div
-      className="settings"
-      style={{
-        background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-      }}
-    >
+    <div className={theming === "light" ? "settings" : "settingsDark"}>
       <div className="settingsWrap">
         <button
-          style={{
-            background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-          }}
-          className="buttonSm"
+          className={
+            theming === "light" ? "buttonSettings" : "buttonSettingsDark"
+          }
           onClick={toggleTheme}
         >
           <img src={iconDarkmode} alt="darkModeIcon" />
         </button>
         <button
-          style={{
-            background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-          }}
-          className="buttonSm"
+          className={
+            theming === "light" ? "buttonSettings" : "buttonSettingsDark"
+          }
           onClick={logout}
         >
           <img src={iconLogout} alt="logoutIcon" />
