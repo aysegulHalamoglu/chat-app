@@ -5,16 +5,18 @@
 }
 
 /* ------ Cancel Button -----------*/
-.cancelButton {
+.buttonContainer {
   display: flex;
   flex: 1;
   flex-direction: row;
   justify-content: end;
+  color: gray;
+}
+.cancelButton {
   padding: 1rem;
   padding-right: 2rem;
   font-size: 2rem;
   font-weight: 500;
-  color: gray;
 }
 .cancelButton:hover {
   color: var(--primary);
@@ -24,13 +26,14 @@
 
 .userDetails {
   display: flex;
-  flex: 2;
+  flex: 3;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .profilePicContainer {
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 .profilePic {
   width: 6.5rem;
@@ -46,13 +49,12 @@
   font-family: "Poppins";
   font-size: 1.1rem;
   font-weight: 400;
-  color: #c8c8c8;
   margin-bottom: 1rem;
 }
 /* ------ Action Boxes -----------*/
 .actions {
   display: flex;
-  flex: 4;
+  flex: 3.5;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;

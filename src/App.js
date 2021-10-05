@@ -10,12 +10,13 @@ import { ThemeContext } from "./context/ThemeContext";
 function App() {
   const [user, setUser] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [friendList, setFriendList] = useState(mockFriends.friends);
   const [clickedMore, setClickedMore] = useState(false);
   const [theming, setTheming] = useState("light");
 
-  const selectUser = (userID) => {
-    const friend = mockFriends.friends.find((friend) => friend.id === userID);
-    setSelectedUser(friend);
+  const handleSetSelectedUser = (userID) => {
+    const friend = friendList.find((friend) => friend.id === userID);
+    if (user) setSelectedUser(friend);
   };
 
   const sendNewMessage = (messageText) => {
@@ -26,7 +27,7 @@ function App() {
         {
           id: uuidv4(),
           text: messageText,
-          sender: user.id,
+          sender: user.userID,
         },
       ],
     });
@@ -57,14 +58,6 @@ function App() {
     }
   };
 
-  function changeColor(theming) {
-    if (theming === "light") {
-      return "themeLight";
-    } else {
-      return "themeDark";
-    }
-  }
-
   useEffect(() => {
     handleCancel();
   }, [selectedUser]);
@@ -82,7 +75,6 @@ function App() {
         value={{
           theming,
           toggleTheme,
-          changeColor,
         }}
       >
         <LoginContext.Provider
@@ -90,9 +82,9 @@ function App() {
             user,
             login,
             logout,
-            friendList: mockFriends.friends,
-            selectUser,
+            friendList,
             selectedUser,
+            setSelectedUser: handleSetSelectedUser,
             sendNewMessage,
             onClickedMore,
             clickedMore,

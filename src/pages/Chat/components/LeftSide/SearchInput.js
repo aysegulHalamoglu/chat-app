@@ -7,11 +7,17 @@ export default function SearchInput({ handleOnChange }) {
   return (
     <div
       className={
-        theming === "light" ? "searchbarContainer" : "searchbarContainerDark"
+        theming === "light"
+          ? "searchbarContainer bgGray2"
+          : "searchbarContainer bgGray5"
       }
     >
       <CustomInput
-        className={theming === "light" ? "searchbar" : "searchbarDark"}
+        className={
+          theming === "light"
+            ? "searchbar  bgGray1 bL"
+            : "searchbar  bgGray3 bD cWhite"
+        }
         placeholder="Search..."
         onChange={(e) => {
           handleOnChange(e.target.value);

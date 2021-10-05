@@ -8,11 +8,15 @@ export default function Settings() {
   const { logout } = useContext(LoginContext);
   const { toggleTheme, theming } = useContext(ThemeContext);
   return (
-    <div className={theming === "light" ? "settings" : "settingsDark"}>
+    <div
+      className={theming === "light" ? "settings bgGray2" : "settings bgGray5 "}
+    >
       <div className="settingsWrap">
         <button
           className={
-            theming === "light" ? "buttonSettings" : "buttonSettingsDark"
+            theming === "light"
+              ? "buttonSettings bgGray2"
+              : "buttonSettings bgGray5"
           }
           onClick={toggleTheme}
         >
@@ -20,7 +24,9 @@ export default function Settings() {
         </button>
         <button
           className={
-            theming === "light" ? "buttonSettings" : "buttonSettingsDark"
+            theming === "light"
+              ? "buttonSettings bgGray2"
+              : "buttonSettings bgGray5"
           }
           onClick={logout}
         >

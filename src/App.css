@@ -44,6 +44,7 @@ body {
 }
 .CustomButton {
   font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
   background-color: var(--primary);
 }

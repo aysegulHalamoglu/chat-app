@@ -1,22 +1,12 @@
-:root {
-  /* Colors */
-  --primary: #68b7ff;
-  --primaryDark: #4d8dc8;
-  --secondary: #f2f2f2;
-  --input: #f3f3f3;
-  --inputcolor: #bbbbbb;
-  --lightBG: #f3f3f3;
-  --darkBG: #6a6a6a;
-}
-
 * {
   box-sizing: border-box;
+  overflow: hidden;
 }
 .chatContainer {
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
+  max-width: 100%;
+  height: 100vh;
 }
 
 .left-side,
@@ -26,153 +16,104 @@
 }
 
 .left-side {
+  min-width: 10rem;
   flex: 1;
+}
+.right-side {
+  flex: 3;
 }
 
 /*********************** -Left Side- *****************************/
 /* -Search Input- *****************************/
 
 .searchbarContainer {
+  flex: 0.8;
+  padding: 1rem;
   display: flex;
   justify-items: center;
-  background-color: var(--secondary);
-  padding: 1rem;
-  padding-bottom: 0.7rem;
-}
-.searchbarContainerDark {
-  display: flex;
-  justify-items: center;
-  background-color: #6a6a6a;
-  padding: 1rem;
-  padding-bottom: 0.7rem;
 }
 
 .searchbar {
   flex: 1;
   display: flex;
   padding: 0.4rem;
-  border: 1px solid var(--inputcolor);
-  color: #000000;
+  padding-left: 0.7rem;
   font-family: "Poppins";
   font-size: 1rem;
 }
-.searchbarDark {
-  flex: 1;
-  display: flex;
-  padding: 0.4rem;
-  border: 1px solid white;
-  color: #ffffff;
-  background-color: gray;
-  font-family: "Poppins";
-  font-size: 1rem;
-}
-.searchbar:focus,
-.searchbarDark:focus {
+
+.searchbar:focus {
   outline: none;
-}
-.searchbarDark::placeholder {
-  color: #ffffff;
 }
 
 /* Friend List- *****************************/
 
 .friendList {
-  background-color: var(--lightBG);
-  overflow: scroll;
-  flex: 1;
+  flex: 8;
 }
-.friendListDark {
+.scrollbar {
   flex: 1;
-  background-color: var(--input);
-  overflow: scroll;
+  height: 80vh;
+  overflow-y: scroll;
+  padding-bottom: 4rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 0.4rem;
+  margin-left: 1rem;
 }
 .users {
   display: flex;
   flex-direction: row;
-  padding: 0.1rem;
+  padding: 1rem;
   justify-items: center;
   align-items: center;
-  background-color: white;
-  color: #000000;
   transition: 1s;
-  margin-bottom: 0.4rem;
 }
-.usersDark {
+.friendLeftDetails {
   display: flex;
-  flex-direction: row;
-  padding: 0.1rem;
-  justify-items: center;
-  align-items: center;
-  background-color: #7a7a7a;
-  color: #ffffff;
-  transition: 1s;
-  margin-bottom: 0.4rem;
+  flex-direction: column;
 }
-.users:hover {
-  background-color: var(--primary);
-  cursor: pointer;
+.userNameLeft {
+  font-size: 0.9rem;
+  margin: 0;
 }
-.usersDark:hover {
-  background-color: var(--primaryDark);
-  cursor: pointer;
-}
-.userName {
-  border: 0 !important;
-  font-size: 1rem;
+.userLastMessage {
+  font-size: 0.8rem;
+  margin: 0;
+  margin-top: 0.2rem;
 }
 .users h4 {
   margin-left: 0.7rem;
-}
-.usersDark h4 {
-  margin-left: 0.7rem;
-}
-.right-side {
-  flex: 4;
-}
-
-.messages {
-  flex: 1;
 }
 
 /* -Settings- *****************************/
 
 .settings {
+  flex: 1.7;
   display: flex;
   justify-content: end;
   flex-direction: row;
-  background-color: var(--secondary);
-}
-.settingsDark {
-  display: flex;
-  justify-content: end;
-  flex-direction: row;
-  background-color: var(--darkBG);
 }
 .settingsWrap {
-  margin-top: 1rem; /* preventing conflict between scrollbar and icons hovering */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 .buttonSettings {
   border-radius: 1.5rem;
   border: none;
   transition: 0.5s;
-  background-color: var(--secondary);
-}
-.buttonSettingsDark {
-  border-radius: 1.5rem;
-  border: none;
-  transition: 0.5s;
-  background-color: var(--darkBG);
 }
 
 .buttonSettings:hover,
 .buttonSettings:focus {
   box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
   transform: translateY(-1em);
-}
-.buttonSettingsDark:hover,
-.buttonSettingsDark:focus {
-  box-shadow: 0 0.9em 0.7em -0.4em var(--primary);
-  transform: translateY(-1em);
+  cursor: pointer;
 }
 
 /*********************** -Right Side- *****************************/
@@ -180,15 +121,15 @@
 /* -User Header- *****************************/
 
 .userHeader {
+  flex: 1.2;
   display: flex;
   flex-direction: row;
-  background-color: var(--secondary);
 }
 
 /* User Image */
 .userImage {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   flex: 1;
 }
@@ -198,23 +139,28 @@
   height: 3rem;
 }
 .userName {
-  flex: 5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 6;
   margin-left: 1rem;
 }
 
+.more {
+  display: flex;
+  align-items: center;
+}
 .moreButton {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: #8f8c8c;
   font-weight: 900;
   border: none;
   margin-right: 2rem;
 }
 .moreButton:hover {
-  color: #141414;
   cursor: pointer;
 }
 
@@ -223,30 +169,50 @@
   display: flex;
   height: 100vh;
 }
-.message {
+.messageContainer {
   display: flex;
-  background-color: var(--secondary);
-  padding: 0.6rem;
-  margin: 1.5rem;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.messageContainer.fromUser {
+  align-items: flex-start;
+}
+.messageContainer.fromFriend {
+  align-items: flex-end;
+}
+.messages {
+  flex: 7;
+}
+.message {
+  flex: 0.5;
+  display: flex;
+  padding: 0.7rem;
+  margin: 0.5rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
   font-family: Poppins;
   letter-spacing: 0.0001rem;
   text-align: justify;
+  border-radius: 0.5rem;
 }
 
 /* -Message Input- *****************************/
 
 .messageInputContainer {
+  flex: 1;
   display: flex;
-  background-color: var(--secondary);
   padding: 1rem;
 }
+
 .messageInput {
   flex: 4;
   padding-left: 1rem;
   padding: 1rem;
-  border: 1px solid var(--inputcolor);
   font-family: "Poppins";
-  font-size: 1rem;
+  font-size: 1.1rem;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 .messageInput:focus {
   outline: none;
@@ -254,7 +220,7 @@
 
 .messageButton {
   text-transform: uppercase;
-  flex: 0.5;
+  flex: 1;
   border-color: transparent;
   border-radius: 0.2rem;
   padding: 0.7rem;

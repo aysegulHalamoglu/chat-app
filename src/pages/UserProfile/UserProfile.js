@@ -22,14 +22,20 @@ export default function UserProfile() {
       }}
     >
       <div
+        className="buttonContainer"
         style={{
           background: theming === "light" ? "#E5E5E5" : "#7A7A7A",
           color: theming === "light" ? "#000000" : "#FFFFFF",
         }}
-        className="cancelButton"
-        onClick={handleCancel}
       >
-        x
+        <span
+          className={
+            theming === "light" ? "cancelButton cGray3" : "cancelButton cGray2"
+          }
+          onClick={handleCancel}
+        >
+          x
+        </span>
       </div>
       <div
         className="userDetails"
@@ -44,7 +50,13 @@ export default function UserProfile() {
         <span className="profileName">
           {`${selectedUser.first_name} ${selectedUser.last_name}`}
         </span>
-        <span className="lastSeen">Last seen 2 hours ago</span>
+        <span
+          className={
+            theming === "light" ? "lastSeen cGray3 " : "lastSeen cGray2  "
+          }
+        >
+          Last seen 2 hours ago
+        </span>
       </div>
 
       <div

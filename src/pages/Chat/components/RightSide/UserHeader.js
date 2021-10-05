@@ -4,16 +4,18 @@ import profilePic from "./../../../../assets/img/profilPic.png";
 import "../../Chat.css";
 import CustomButton from "../../../../components/CustomButton";
 import { ThemeContext } from "../../../../context/ThemeContext";
+import { Redirect, useLocation } from "react-router";
 export default function UserHeader() {
   const { selectedUser, onClickedMore } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
+  const { pathname } = useLocation();
 
+  if (selectedUser && pathname === "/chat") <Redirect to="/profile" />;
   return (
     <div
-      className="userHeader"
-      style={{
-        background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-      }}
+      className={
+        theming === "light" ? "userHeader bgGray2" : "userHeader bgGray4"
+      }
     >
       <div className="userImage">
         <img className="userPic" src={profilePic} alt="profile" />
@@ -30,12 +32,13 @@ export default function UserHeader() {
             : "No selected user"}
         </h3>
       </div>
-      <div className="more">
+      <div className="more ">
         <CustomButton
-          style={{
-            background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-          }}
-          className="moreButton"
+          className={
+            theming === "light"
+              ? "moreButton bgGray2 hov4"
+              : "moreButton bgGray4 hov5"
+          }
           text="..."
           onClick={onClickedMore}
         />

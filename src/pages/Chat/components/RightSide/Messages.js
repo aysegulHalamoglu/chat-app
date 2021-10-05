@@ -2,32 +2,34 @@ import React, { useContext } from "react";
 import { LoginContext } from "../../../../context/LoginContext";
 import { ThemeContext } from "../../../../context/ThemeContext";
 export default function Messages() {
-  const { selectedUser } = useContext(LoginContext);
+  const { selectedUser, user } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
   return (
     <div
-      style={{
-        background: theming === "light" ? "#FFFFFF" : "#7A7A7A",
-        color: theming === "light" ? "#000000" : "#FFFFFF",
-      }}
-      className="messages"
+      className={theming === "light" ? "messages bgGray1" : "messages bgGray3"}
     >
-      {selectedUser?.messages.map((message, index) => {
-        return (
-          <div className="messageContainer">
+      <div className="scrollbar">
+        {selectedUser?.messages.map((message, index) => {
+          return (
             <div
-              style={{
-                background: theming === "light" ? "#f2f2f2" : "#515151",
-                color: theming === "light" ? "#000000" : "#FFFFFF",
-              }}
-              className="message"
               key={index}
+              className={` messageContainer ${
+                message.sender === user.id ? "fromUser" : "fromFriend"
+              }`}
             >
-              {message.text}
+              <div
+                className={
+                  theming === "light"
+                    ? "message bgGray2"
+                    : "message bgGray5 cWhite"
+                }
+              >
+                {message.text}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

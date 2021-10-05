@@ -11,24 +11,30 @@ export default function MessageInput() {
   const [message, setMessage] = useState("");
   return (
     <div
-      style={{
-        background: theming === "light" ? "#f2f2f2" : "#6A6A6A",
-      }}
-      className="messageInputContainer"
+      className={
+        theming === "light"
+          ? "messageInputContainer bgGray2 btL"
+          : "messageInputContainer bgGray4 btD"
+      }
     >
       <CustomInput
         value={message}
-        className="messageInput"
+        className={
+          theming === "light"
+            ? "messageInput bgGray2 bL"
+            : "messageInput bgGray3 bD cWhite"
+        }
         placeholder="Type..."
         onChange={(e) => {
           setMessage(e.target.value);
         }}
       />
       <CustomButton
-        style={{
-          background: theming === "light" ? "#68b7ff" : "#4D8DC8",
-        }}
-        className="messageButton CustomButton"
+        className={
+          theming === "light"
+            ? "messageButton CustomButton bgBlue2 "
+            : "messageButton CustomButton bgBlue3 "
+        }
         text="SEND"
         onClick={() => {
           sendNewMessage(message);

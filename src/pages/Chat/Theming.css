@@ -1,0 +1,146 @@
+:root {
+  /* Gray: light to dark */
+  --gray1: #f2f2f2;
+  --gray2: #d9d7d7;
+  --gray3: #7a7a7a;
+  --gray4: #636363;
+  --gray5: #515151;
+  --gray6: #2b2b2b;
+  /* Blue: light to dark */
+  --blue1: #68b7ff;
+  --blue2: #4d8dc8;
+  --blue3: #3373d3;
+}
+/* Background Gray: light to dark */
+.bgGray1 {
+  background-color: var(--gray1);
+}
+.bgGray2 {
+  background-color: var(--gray2);
+}
+.bgGray3 {
+  background-color: var(--gray3);
+}
+.bgGray4 {
+  background-color: var(--gray4);
+}
+.bgGray5 {
+  background-color: var(--gray5);
+}
+.bgGray6 {
+  background-color: var(--gray6);
+}
+.bgWhite {
+  background-color: #ffffff;
+}
+.bgBlack {
+  background-color: #000000;
+}
+/* Color Gray: light to dark */
+.cGray1 {
+  color: var(--gray1);
+}
+.cGray2 {
+  color: var(--gray2);
+}
+.cGray3 {
+  color: var(--gray3);
+}
+.cGray4 {
+  color: var(--gray4);
+}
+.cGray5 {
+  color: var(--gray5);
+}
+.cGray6 {
+  color: var(--gray6);
+}
+.cWhite {
+  color: #ffffff;
+}
+.cWhite::placeholder {
+  color: white;
+}
+.cBlack {
+  color: #000000;
+}
+
+/* Background Blue: light to dark */
+.bgBlue1 {
+  background-color: var(--blue1);
+}
+.bgBlue2 {
+  background-color: var(--blue2);
+}
+.bgBlue3 {
+  background-color: var(--blue3);
+}
+
+/* Hovering --------------------- */
+.hov1:hover {
+  background-color: var(--blue1);
+  cursor: pointer;
+}
+.hov2:hover {
+  background-color: var(--blue2);
+  cursor: pointer;
+}
+.hov3:hover {
+  background-color: var(--blue3);
+  cursor: pointer;
+}
+
+.hov4:hover {
+  color: var(--blue2);
+  cursor: pointer;
+}
+.hov5:hover {
+  color: var(--blue3);
+  cursor: pointer;
+}
+/* ---------- Scrollbars Theming ---------- */
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray5);
+}
+
+/* ---------- Border Theming ---------- */
+
+.brL {
+  /*  Border Right Light */
+  border-right: 0.2rem solid var(--gray3);
+}
+.brD {
+  /*  Border Right Dark */
+  border-right: 0.2rem solid var(--gray6);
+}
+.btL {
+  /*  Border Top Light */
+  border-top: 0.3rem solid var(--gray3);
+}
+.btD {
+  /*  Border Top Dark */
+  border-top: 0.3rem solid var(--gray6);
+}
+.bL {
+  /*  Input Border Light */
+  border: 0.15rem solid var(--gray3);
+  border-radius: 0.4rem;
+}
+.bD {
+  /*  Input Border Dark */
+  border: 0.15rem solid var(--gray3);
+  border-radius: 0.4rem;
+}
