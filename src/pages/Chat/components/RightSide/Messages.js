@@ -4,6 +4,9 @@ import { ThemeContext } from "../../../../context/ThemeContext";
 export default function Messages() {
   const { selectedUser, user } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
+  console.log("user:", user);
+  console.log("selectedUser:", selectedUser);
+
   return (
     <div
       className={theming === "light" ? "messages bgGray1" : "messages bgGray3"}
@@ -12,19 +15,25 @@ export default function Messages() {
         {selectedUser?.messages.map((message, index) => {
           return (
             <div
-              key={index}
-              className={` messageContainer ${
+              className={`messageContainer ${
                 message.sender === user.id ? "fromUser" : "fromFriend"
               }`}
+              key={index}
             >
               <div
                 className={
                   theming === "light"
-                    ? "message bgGray2"
-                    : "message bgGray5 cWhite"
+                    ? `message ${
+                        message.sender === user.id ? "bgBlue2" : "bgGray2"
+                      }`
+                    : `message ${
+                        message.sender === user.id
+                          ? "bgBlue3 cWhite"
+                          : "bgGray5 cWhite"
+                      }`
                 }
               >
-                {message.text}
+                <p> {message.text}</p>
               </div>
             </div>
           );
@@ -33,3 +42,23 @@ export default function Messages() {
     </div>
   );
 }
+
+// return (
+//   <div className="messages">
+//     {selectedUser
+//       ? selectedUser.messages.map((message, index) => {
+//           return (
+//             <div
+//               className={`messageContainer ${
+//                 message.sender === user.id ? "fromUser" : "fromFriend"
+//               }`}
+//               key={index}
+//             >
+//               <p className="messageContainer">{message.text}</p>
+//             </div>
+//           );
+//         })
+//       : null}
+//   </div>
+// );
+// }

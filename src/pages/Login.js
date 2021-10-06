@@ -16,12 +16,14 @@ export default function Login() {
 
   // submit login
   const handleSubmitLogin = () => {
-    login({
-      id: Math.random(),
-      username,
-      firstName,
-      lastName,
-    });
+    if (username && firstName && lastName) {
+      login({
+        id: Math.random(),
+        username,
+        firstName,
+        lastName,
+      });
+    }
   };
 
   return (

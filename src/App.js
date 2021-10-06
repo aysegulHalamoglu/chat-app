@@ -12,7 +12,7 @@ function App() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [clickedMore, setClickedMore] = useState(false);
   const [theming, setTheming] = useState("light");
-  const friendList = mockFriends.friends;
+  const [friendList, setFriendList] = useState(mockFriends.friends);
 
   // Login
   const login = (username) => {
@@ -43,7 +43,7 @@ function App() {
 
   // Chat messages : sending new message
   const sendNewMessage = (messageText) => {
-    setSelectedUser({
+    const newSelectedUser = {
       ...selectedUser,
       messages: [
         ...selectedUser.messages,
@@ -53,9 +53,14 @@ function App() {
           sender: user.userID,
         },
       ],
+    };
+    setSelectedUser(newSelectedUser);
+    const newFriendList = friendList.map((u) => {
+      if (u.id === selectedUser.id) return newSelectedUser;
+      else return u;
     });
+    setFriendList(newFriendList);
   };
-
   // when there is new message sort firendList by new message
 
   // UserProfile details go
