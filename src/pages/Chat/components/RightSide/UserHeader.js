@@ -4,13 +4,10 @@ import profilePic from "./../../../../assets/img/profilPic.png";
 import "../../Chat.css";
 import CustomButton from "../../../../components/CustomButton";
 import { ThemeContext } from "../../../../context/ThemeContext";
-import { Redirect, useLocation } from "react-router";
 export default function UserHeader() {
-  const { selectedUser, onClickedMore } = useContext(LoginContext);
+  const { selectedUser, onClickedMore, clickedMore } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
-  const { pathname } = useLocation();
 
-  if (selectedUser && pathname === "/chat") <Redirect to="/profile" />;
   return (
     <div
       className={

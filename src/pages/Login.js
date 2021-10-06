@@ -1,19 +1,29 @@
 import React, { useState, useContext } from "react";
-import { Redirect, useLocation, useHistory } from "react-router";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 import { LoginContext } from "../context/LoginContext";
 import { ThemeContext } from "../context/ThemeContext";
 
 export default function Login() {
+  // context
   const { login, user } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
+  // state
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const { pathname } = useLocation();
-  const history = useHistory("");
-  if (user && pathname === "/login") return <Redirect to="/chat" />;
+  // route
+
+  // submit login
+  const handleSubmitLogin = () => {
+    login({
+      id: Math.random(),
+      username,
+      firstName,
+      lastName,
+    });
+  };
+
   return (
     <div
       className={
@@ -58,9 +68,7 @@ export default function Login() {
             type="submit"
             className="loginRows CustomButton"
             text="LOGIN"
-            onClick={() => {
-              login(username, firstName, lastName);
-            }}
+            onClick={handleSubmitLogin}
           />
         </div>
       </form>

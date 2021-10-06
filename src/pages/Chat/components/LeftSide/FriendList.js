@@ -7,6 +7,8 @@ import profilePic from "./../../../../assets/img/profilPic.png";
 export default function FriendList({ searchText }) {
   const { theming } = useContext(ThemeContext);
   const { friendList, setSelectedUser } = useContext(LoginContext);
+
+  // Friends filtering for searchbar
   const filteredFriendList = friendList.filter((f) =>
     `${f.username}${f.first_name}${f.last_name}`
       .toLowerCase()
@@ -21,6 +23,7 @@ export default function FriendList({ searchText }) {
     >
       <div className="scrollbar">
         {filteredFriendList.map((user) => {
+          console.log(user);
           return (
             <div
               key={user.id}
@@ -43,7 +46,12 @@ export default function FriendList({ searchText }) {
                         ? "userLastMessage cGray3"
                         : "userLastMessage cGray2"
                     }
-                  >{`${friendList[3].messages.text}`}</h4>
+                  >
+                    {`${
+                      user.messages[user.messages.length - 1].text
+                    }`.substring(0, 20)}
+                    ...
+                  </h4>
                 </div>
               </div>
             </div>

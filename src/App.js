@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { LoginContext } from "./context/LoginContext";
 import "./App.css";
-import { v4 as uuidv4 } from "uuid";
 import Routes from "./routes";
-
 import mockFriends from "./mock-friends.json";
+import { v4 as uuidv4 } from "uuid";
+
+import { LoginContext } from "./context/LoginContext";
 import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
@@ -13,12 +13,34 @@ function App() {
   const [friendList, setFriendList] = useState(mockFriends.friends);
   const [clickedMore, setClickedMore] = useState(false);
   const [theming, setTheming] = useState("light");
+  // Login
+  const login = (username) => {
+    const user = { username };
+    setUser({ user });
+    localStorage.setItem("chat_app_user", JSON.stringify(user));
+  };
 
+  useEffect(() => {
+    const usernameFromStorage = localStorage.getItem("chat_app_user");
+    if (usernameFromStorage) {
+      const userObj = JSON.parse(usernameFromStorage);
+      setUser(userObj);
+    }
+  }, []);
+
+  // Logout
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("chat_app_user");
+  };
+
+  // Selecting user
   const handleSetSelectedUser = (userID) => {
     const friend = friendList.find((friend) => friend.id === userID);
     if (user) setSelectedUser(friend);
   };
 
+  // Chat messages : sending new message
   const sendNewMessage = (messageText) => {
     setSelectedUser({
       ...selectedUser,
@@ -32,16 +54,8 @@ function App() {
       ],
     });
   };
-  const login = (username, firstName, lastName) => {
-    const user = { username, firstName, lastName };
-    setUser({ user });
-    localStorage.setItem("chat_app_user", JSON.stringify(user));
-  };
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem("chat_app_user");
-  };
 
+  // UserProfile details go
   const onClickedMore = (clickedMore) => {
     setClickedMore(true);
   };
@@ -50,6 +64,11 @@ function App() {
     setClickedMore(false);
   };
 
+  useEffect(() => {
+    handleCancel();
+  }, [selectedUser]);
+
+  // Theming
   const toggleTheme = () => {
     if (theming === "light") {
       setTheming("dark");
@@ -58,17 +77,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    handleCancel();
-  }, [selectedUser]);
-
-  useEffect(() => {
-    const usernameFromStorage = localStorage.getItem("chat_app_user");
-    if (usernameFromStorage) {
-      const userObj = JSON.parse(usernameFromStorage);
-      setUser(userObj);
-    }
-  }, []);
   return (
     <div className="App">
       <ThemeContext.Provider

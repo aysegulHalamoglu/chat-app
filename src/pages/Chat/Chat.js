@@ -11,12 +11,11 @@ import Messages from "./components/RightSide/Messages";
 import UserHeader from "./components/RightSide/UserHeader";
 import UserProfile from "../UserProfile";
 import EmptyComponent from "./components/RightSide/EmptyComponent";
-import { Redirect } from "react-router";
 export default function Chat() {
-  const { user, clickedMore, selectedUser } = useContext(LoginContext);
-  const { theming } = useContext(ThemeContext);
   const [search, setSearch] = useState("");
-  if (!user) return <Redirect to="/login" />;
+  const { clickedMore, selectedUser } = useContext(LoginContext);
+  const { theming } = useContext(ThemeContext);
+
   return (
     <div className="chatContainer">
       <div
