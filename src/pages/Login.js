@@ -6,7 +6,7 @@ import { ThemeContext } from "../context/ThemeContext";
 
 export default function Login() {
   // context
-  const { login, user } = useContext(LoginContext);
+  const { login } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
   // state
   const [username, setUsername] = useState("");

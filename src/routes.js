@@ -11,8 +11,6 @@ import Login from "./pages/Login";
 import UserProfile from "./pages/UserProfile";
 function Routes() {
   const { user, clickedMore, selectedUser } = useContext(LoginContext);
-  console.log(user);
-
   return (
     <div className="Routes">
       <Router>
@@ -29,11 +27,11 @@ function Routes() {
               {clickedMore === true ? (
                 <>
                   <Redirect
-                    to={`/chat/:${selectedUser.first_name}${selectedUser.last_name}/${selectedUser.id}`}
+                    to={`/chat/details/:${selectedUser.first_name}${selectedUser.last_name}/${selectedUser.id}`}
                   />
                   <Route>
                     <Chat
-                      path={`/chat/:${selectedUser.first_name}${selectedUser.last_name}/${selectedUser.id}`}
+                      path={`/chat/details/:${selectedUser.first_name}${selectedUser.last_name}/${selectedUser.id}`}
                     >
                       <UserProfile />
                     </Chat>

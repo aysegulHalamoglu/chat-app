@@ -10,9 +10,10 @@ import { ThemeContext } from "./context/ThemeContext";
 function App() {
   const [user, setUser] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
-  const [friendList, setFriendList] = useState(mockFriends.friends);
   const [clickedMore, setClickedMore] = useState(false);
   const [theming, setTheming] = useState("light");
+  const friendList = mockFriends.friends;
+
   // Login
   const login = (username) => {
     const user = { username };
@@ -37,7 +38,7 @@ function App() {
   // Selecting user
   const handleSetSelectedUser = (userID) => {
     const friend = friendList.find((friend) => friend.id === userID);
-    if (user) setSelectedUser(friend);
+    if (friend) setSelectedUser(friend);
   };
 
   // Chat messages : sending new message
@@ -55,6 +56,8 @@ function App() {
     });
   };
 
+  // when there is new message sort firendList by new message
+
   // UserProfile details go
   const onClickedMore = (clickedMore) => {
     setClickedMore(true);
@@ -66,7 +69,7 @@ function App() {
 
   useEffect(() => {
     handleCancel();
-  }, [selectedUser]);
+  }, []);
 
   // Theming
   const toggleTheme = () => {

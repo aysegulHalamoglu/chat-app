@@ -5,7 +5,7 @@ import "../../Chat.css";
 import CustomButton from "../../../../components/CustomButton";
 import { ThemeContext } from "../../../../context/ThemeContext";
 export default function UserHeader() {
-  const { selectedUser, onClickedMore, clickedMore } = useContext(LoginContext);
+  const { selectedUser, onClickedMore } = useContext(LoginContext);
   const { theming } = useContext(ThemeContext);
 
   return (
