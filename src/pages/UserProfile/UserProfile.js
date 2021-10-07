@@ -55,7 +55,7 @@ export default function UserProfile() {
             theming === "light" ? "lastSeen cGray3 " : "lastSeen cGray2  "
           }
         >
-          Last seen 2 hours ago
+          {`${selectedUser.last_seen} `}
         </span>
       </div>
 

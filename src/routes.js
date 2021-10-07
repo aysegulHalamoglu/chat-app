@@ -17,7 +17,7 @@ function Routes() {
         <Switch>
           {!user ? (
             <>
-              <Redirect to="/login}" />
+              <Redirect to="/login" />
               <Route>
                 <Login exact path="/login" />
               </Route>

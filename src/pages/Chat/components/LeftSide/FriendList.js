@@ -48,7 +48,7 @@ export default function FriendList({ searchText }) {
                   >
                     {`${
                       user.messages[user.messages.length - 1].text
-                    }`.substring(0, 20)}
+                    }`.substring(0, 30)}
                     ...
                   </h4>
                 </div>

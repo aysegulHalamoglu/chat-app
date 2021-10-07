@@ -3,6 +3,7 @@ import { LoginContext } from "../../../../context/LoginContext";
 import { ThemeContext } from "../../../../context/ThemeContext";
 import iconLogout from "../../../../assets/img/logout.svg";
 import iconDarkmode from "../../../../assets/img/darkmode.svg";
+import iconLightmode from "../../../../assets/img/lightmode.svg";
 
 export default function Settings() {
   const { logout } = useContext(LoginContext);
@@ -20,7 +21,10 @@ export default function Settings() {
           }
           onClick={toggleTheme}
         >
-          <img src={iconDarkmode} alt="darkModeIcon" />
+          <img
+            src={theming === "light" ? iconDarkmode : iconLightmode}
+            alt="darkModeIcon"
+          />
         </button>
         <button
           className={
