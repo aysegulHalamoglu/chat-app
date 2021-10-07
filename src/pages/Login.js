@@ -15,7 +15,8 @@ export default function Login() {
   // route
 
   // submit login
-  const handleSubmitLogin = () => {
+  const handleSubmitLogin = (e) => {
+    e.preventDefault();
     if (username && firstName && lastName) {
       login({
         id: Math.random(),
